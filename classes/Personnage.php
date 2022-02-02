@@ -9,8 +9,9 @@ class Personnage {
     // + protected $id;
     protected $id;
     protected $nom;
-    protected $x;
-    protected $y;
+    protected int $x;
+    protected int $y;
+    protected int $vie = 50;
 
     // Constructeur de ma classe permettant de définir des valeurs par défaut lorsqu'elle est instanciée
     public function __construct() {
@@ -23,6 +24,22 @@ class Personnage {
     public function walkRight() {
         $this->x+=1;
 
+    }
+
+    /**
+     * @return int
+     */
+    public function getVie()
+    {
+        return $this->vie;
+    }
+
+    /**
+     * @param int $vie
+     */
+    public function setVie($vie)
+    {
+        $this->vie = $vie;
     }
 
     // Setter permettant de définir l'attribut privé id
